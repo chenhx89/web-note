@@ -655,4 +655,4 @@ btnBlue.ontouchend = function(){
 
 <p><a href="http://ljinkai.github.io/2015/06/06/mobile-web-skill/">查看链接</a></p>
 
-<p>个人博客： <a href="http://ljinkai.github.io/">http://ljinkai.github.io/</a></p><script src="http://htmljs.b0.upaiyun.com//js/tuiku.js"></script>
+<p>个人博客： <a href="http://ljinkai.github.io/">http://ljinkai.github.io/</a></p>
