@@ -42,5 +42,18 @@ jade：对应jade文件，compass：对应scss文件。
 3、cd到这个项目上，然后在命名中运行：npm install gulp gulp-compass 这就安装了gulp-compass 其他如这
 </pre>
 
+### node + express +ejs项目搭建
+<pre>前提是nodejs环境都有
+cd到目录
+1.express ProjcetName  创建项目
+2.cd ProjectName
+3.npm install  下载配置文件
+4.npm start   开启项目(npm install -g node-dev 或 [node-dev bin/www])
+
+下载配置文件时node_modules文件夹内需要有modelproxy文件
+</pre>
+
+
+
 
 
