@@ -28,4 +28,5 @@ git revert commit-id （比如：fa042ce57ebbe5bb9c8db709f719cec2c58ee7ff）撤�
 </pre>
 
 **12、**克隆：先cd到要克隆的目录然后放克隆文件地址<br>
-如：git clone git@git.siyinjia.com:siyinjia/background.git
+如：git clone git@git.siyinjia.com:siyinjia/background.git<br>
+**13、**git diff：上下左右键盘查看提交代码修改情况 退出 q
