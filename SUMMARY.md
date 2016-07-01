@@ -7,4 +7,5 @@
    * [git命令](git命令.md)
    * [GitBook Editor 安装与使用笔记](GitBook Editor 安装与使用笔记.md)
    * [安装nodejs，搭配环境，项目创建](安装nodejs_搭配环境_项目创建.md)
+* nodejs项目配置文件介绍
 
