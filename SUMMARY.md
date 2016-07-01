@@ -12,6 +12,6 @@
    * [package.json](packagejson.md)
    * [config.rb](configrb.md)
    * [.gitignore](gitignore.md)
-* [模块化管理工具](Modular_management_tools.md)
+* [模块化管理工具及框架](Modular_management_tools.md)
    * [Webpack](webpack.md)
 
