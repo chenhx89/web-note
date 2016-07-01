@@ -11,7 +11,7 @@ javascripts_dir = "builds/js"
 
 直接运行命令语句：compass watch  可编译scss
 
-放开代码：# output_style = :expanded or :nested or :compact or :compressed
+放开代码：# output_style = :compressed&emsp;去掉前面的“#”这时css能被时时压塑
 
 
 
