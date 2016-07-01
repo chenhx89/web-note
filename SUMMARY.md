@@ -16,5 +16,5 @@
    * [Webpack](webpack.md)
    * [seajs](seajs.md)
 * [js模块](jsmo_kuai.md)
-   * [获得服务器时间](获得服务器时间.md)
+   * [获得服务器时间及时间转化计算](获得服务器时间.md)
 
