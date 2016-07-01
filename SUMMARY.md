@@ -10,4 +10,5 @@
 * [nodejs项目配置文件介绍](nodejs.md)
    * [gulpfile.js](gulpfilejs.md)
    * [package.json](packagejson.md)
+   * config.rb
 
