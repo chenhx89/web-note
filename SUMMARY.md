@@ -12,4 +12,5 @@
    * [package.json](packagejson.md)
    * [config.rb](configrb.md)
    * [.gitignore](gitignore.md)
+* 模块化管理工具
 
