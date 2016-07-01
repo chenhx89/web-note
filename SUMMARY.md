@@ -11,5 +11,5 @@
    * [gulpfile.js](gulpfilejs.md)
    * [package.json](packagejson.md)
    * [config.rb](configrb.md)
-   * .gitignore
+   * [.gitignore](gitignore.md)
 
