@@ -9,5 +9,5 @@
    * [安装nodejs，搭配环境，项目创建](安装nodejs_搭配环境_项目创建.md)
 * [nodejs项目配置文件介绍](nodejs.md)
    * [gulpfile.js](gulpfilejs.md)
-   * package.json
+   * [package.json](packagejson.md)
 
