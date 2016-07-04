@@ -3,4 +3,4 @@
 
 
 
-笔记路径结构请打开“<a href="https://github.com/chenhx89/web-note/blob/master/SUMMARY.md">SUMMARY.md</a>”
+记录前端开发过程中容易出错的地方，及浏览器的一些兼容解决方法
