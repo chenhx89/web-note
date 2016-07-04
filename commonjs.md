@@ -173,4 +173,17 @@ LEMONUtils.testFn = {
 </pre>
 
 
+### 获取url中参数值
+
+<pre>function LEMONUtils() {}
+LEMONUtils.getQueryString = function (name) {
+    var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+    var r = decodeURIComponent(top.location.search).substr(1).match(reg);
+    if (r != null) return unescape(r[2]); return "";
+}
+
+注：运用 var _type = LemonUtils.getQueryString('type');
+</pre>
+
+
 
