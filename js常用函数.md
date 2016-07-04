@@ -61,3 +61,16 @@ console.log(arr);    //["George", "John", "William", "Martin"]
 <pre>var arr=["George","John","Thomas","James","Adrew","Martin"];
 console.log(arr.toString());   //"George,John,Thomas,James,Adrew,Martin"
 </pre>
+12、toLocaleString() 把数组转换为本地字符串。如：
+<pre>var arr=["George","John","Thomas","James","Adrew","Martin"];
+console.log(arr.toLocaleString());   //"George,John,Thomas,James,Adrew,Martin"
+</pre>
+13、unshift() 方法可向数组的开头添加一个或更多元素，并返回新的长度。（注：unshift() 方法无法在 Internet Explorer 中正确地工作！）如：
+<pre>var arr=["George","John","Thomas"];
+console.log(arr.unshift("William"));    //4
+console.log(arr);                       //["William", "George", "John", "Thomas"]
+</pre>
+14、valueOf() 方法返回 Array 对象的原始值。如：
+<pre>var arr=["George","John","Thomas"];
+console.log(arr.valueOf());  //["George","John","Thomas"]
+</pre>
