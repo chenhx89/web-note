@@ -37,5 +37,27 @@ console.log(arr.shift());       //"tom"
 start	必需。规定从何处开始选取。如果是负数，那么它规定从数组尾部开始算起的位置。也就是说，-1 指最后一个元素，-2 指倒数第二个元素，以此类推。<br>
 end	可选。规定从何处结束选取。该参数是数组片断结束处的数组下标。如果没有指定该参数，那么切分的数组包含从 start 到数组结束的所有元素。如果这个参数是负数，那么它规定的是从数组尾部开始算起的元素。
 <pre>var arr = ["George","John","Thomas"];
-console.log(arr.slice(1));   //
+console.log(arr.slice(1));   //["John", "George"]
+console.log(arr.slice(0,2)); //["Thomas", "John"]
+</pre>
+9、sort() 方法用于对数组的元素进行排序。（对数组元素首字母或首数字排序）如：
+<pre>var arr=["George","John","Thomas","James","Adrew","Martin"];
+console.log(arr.sort());  //["Adrew", "George", "James", "John", "Martin", "Thomas"]
+</pre>
+<pre>对数字进行排序需借助函数
+var arr=[10,5,40,25,1000,1];
+function sortNumber(a,b){
+  return a - b
+}
+console.log(arr.sort(sortNumber));   //[1, 5, 10, 25, 40, 1000]
+</pre>
+10、splice() 方法向/从数组中添加/删除项目，然后返回被删除的项目。如：
+<pre>var arr=["George","John","Thomas","James","Adrew","Martin"];
+//删除从 index 2 ("Thomas") 开始的三个元素，并添加一个新元素 ("William") 来替代被删除的元素
+console.log(arr.splice(2,3,"William"));  //["Thomas", "James", "Adrew"]
+console.log(arr);    //["George", "John", "William", "Martin"]
+</pre>
+11、toString() 方法可把数组转换为字符串，并返回结果。如：
+<pre>var arr=["George","John","Thomas","James","Adrew","Martin"];
+console.log(arr.toString());   //"George,John,Thomas,James,Adrew,Martin"
 </pre>
