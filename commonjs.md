@@ -21,6 +21,7 @@ isZipCode : function(s) {
     var re = /^[1-9][0-9]{5}$/;
     return re.test(s);
 },
+//数字
 isNumber:function(s) {
     var re = /^[0-9]*$/;
     return re.test(s);
@@ -37,6 +38,30 @@ isNickname:function(s){
 isMoney: function(s) {
     var re = /^\d*(\.\d{1,2})?$|^\d*\.(\d{1,2})?$/;
     return re.test(s);
+},
+// 全中文
+isChinese: function(value) {
+    return /^[\u4e00-\u9fa5]+$/.test(value);
+},
+// 全数字
+isNum: function(value) {
+    return /^[0-9]+$/.test(value);
+},
+// 全英文
+isEnglish: function(value) {
+    return /^[a-zA-Z]+$/.test(value);
+},
+// 英文、数字
+isPwd: function(value) {
+    return /^[a-zA-Z0-9]+$/.test(value);
+},
+// 英文、数字、汉字
+isUname: function(value) {
+    return /^[a-zA-Z0-9\u4E00-\u9FA5]+$/.test(value);
+},
+// 是否为RMB
+isMoney: function(data, isPositive) {
+    return isPositive ? /^\d+(\.\d{1,2})?$/.test(data) && parseFloat(data) > 0 : /^(-)?\d+(\.\d{1,2})?$/.test(data);
 },
 // 身份证
 isIdCard: function(idCard) {
