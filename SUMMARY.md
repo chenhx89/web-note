@@ -20,4 +20,5 @@
    * [common.js](commonjs.md)
    * [js及jquery获取页面和元素的宽高](js获取宽度.md)
    * [js常用函数](js常用函数.md)
+* 常用插件
 
