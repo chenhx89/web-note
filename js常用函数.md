@@ -74,3 +74,5 @@ console.log(arr);                       //["William", "George", "John", "Thomas"
 <pre>var arr=["George","John","Thomas"];
 console.log(arr.valueOf());  //["George","John","Thomas"]
 </pre>
+15、js数据类型
+<pre>字符串、数字、布尔、数组、对象、Null、Undefined</pre>
