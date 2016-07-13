@@ -2,7 +2,7 @@
 <!DOCTYPE HTML>
 <html lang="" >
     <head>
-        <title>前端开发笔记 · GitBook</title>
+        <title>时间相关模块 · GitBook</title>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
@@ -57,8 +57,10 @@
     <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="移动web开发技巧汇总.html" />
+    <link rel="next" href="commonjs.html" />
     
+    
+    <link rel="prev" href="jsmo_kuai.html" />
     
 
     </head>
@@ -87,7 +89,7 @@
         
         
     
-        <li class="chapter active" data-level="1.1" data-path="./">
+        <li class="chapter " data-level="1.1" data-path="./">
             
                 <a href="./">
             
@@ -320,7 +322,7 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.5.1" data-path="时间相关模块.html">
+        <li class="chapter active" data-level="1.5.1" data-path="时间相关模块.html">
             
                 <a href="时间相关模块.html">
             
@@ -439,7 +441,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="." >前端开发笔记</a>
+        <a href="." >时间相关模块</a>
     </h1>
 </div>
 
@@ -454,8 +456,114 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="&#x524D;&#x7AEF;&#x5F00;&#x53D1;&#x76F8;&#x5173;&#x7B14;&#x8BB0;">&#x524D;&#x7AEF;&#x5F00;&#x53D1;&#x76F8;&#x5173;&#x7B14;&#x8BB0;</h1>
-<p>&#x8BB0;&#x5F55;&#x524D;&#x7AEF;&#x5F00;&#x53D1;&#x8FC7;&#x7A0B;&#x4E2D;&#x5BB9;&#x6613;&#x51FA;&#x9519;&#x7684;&#x5730;&#x65B9;&#xFF0C;&#x53CA;&#x6D4F;&#x89C8;&#x5668;&#x7684;&#x4E00;&#x4E9B;&#x517C;&#x5BB9;&#x89E3;&#x51B3;&#x65B9;&#x6CD5;</p>
+                                <h3 id="&#x83B7;&#x5F97;&#x670D;&#x52A1;&#x5668;&#x65F6;&#x95F4;">&#x83B7;&#x5F97;&#x670D;&#x52A1;&#x5668;&#x65F6;&#x95F4;</h3>
+<pre>function get_server_time(){
+    var xmlHttp = false;
+    //&#x83B7;&#x53D6;&#x670D;&#x52A1;&#x5668;&#x65F6;&#x95F4;
+    try {
+        xmlHttp = new ActiveXObject(&quot;Msxml2.XMLHTTP&quot;);
+    } catch (e) {
+        try {
+            xmlHttp = new ActiveXObject(&quot;Microsoft.XMLHTTP&quot;);
+        } catch (e2) {
+            xmlHttp = false;
+        }
+    }
+
+    if (!xmlHttp &amp;&amp; typeof XMLHttpRequest != &apos;undefined&apos;) {
+        xmlHttp = new XMLHttpRequest();
+    }
+
+    xmlHttp.open(&quot;GET&quot;, window.location.href.toString(), false);
+    xmlHttp.setRequestHeader(&quot;If-None-Match&quot;, &quot;bytes=-1&quot;);
+    xmlHttp.setRequestHeader(&quot;Cache-Control&quot;,&quot;no-cache&quot;);
+    xmlHttp.send(null);
+
+    return new Date(xmlHttp.getResponseHeader(&quot;Date&quot;));
+}
+
+&#x8FD0;&#x7528;&#x5B9E;&#x4F8B;:&#x79C1;&#x94F6;&#x5BB6;&#x4E2D;&#x79CB;&#x8282;&#x62BD;&#x5956;&#x6D3B;&#x52A8;
+</pre>
+
+
+<h3 id="&#x65F6;&#x95F4;&#x683C;&#x5F0F;&#x8F6C;&#x5316;&#xFF0C;&#x4E24;&#x8005;&#x65F6;&#x95F4;&#x76F8;&#x6BD4;&#x8F83;">&#x65F6;&#x95F4;&#x683C;&#x5F0F;&#x8F6C;&#x5316;&#xFF0C;&#x4E24;&#x8005;&#x65F6;&#x95F4;&#x76F8;&#x6BD4;&#x8F83;</h3>
+<pre>// &#x5BF9;Date&#x7684;&#x6269;&#x5C55;&#xFF0C;&#x5C06; Date &#x8F6C;&#x5316;&#x4E3A;&#x6307;&#x5B9A;&#x683C;&#x5F0F;&#x7684;String
+// &#x6708;(M)&#x3001;&#x65E5;(d)&#x3001;&#x5C0F;&#x65F6;(h)&#x3001;&#x5206;(m)&#x3001;&#x79D2;(s)&#x3001;&#x5B63;&#x5EA6;(q) &#x53EF;&#x4EE5;&#x7528; 1-2 &#x4E2A;&#x5360;&#x4F4D;&#x7B26;&#xFF0C;
+// &#x5E74;(y)&#x53EF;&#x4EE5;&#x7528; 1-4 &#x4E2A;&#x5360;&#x4F4D;&#x7B26;&#xFF0C;&#x6BEB;&#x79D2;(S)&#x53EA;&#x80FD;&#x7528; 1 &#x4E2A;&#x5360;&#x4F4D;&#x7B26;(&#x662F; 1-3 &#x4F4D;&#x7684;&#x6570;&#x5B57;)
+// &#x4F8B;&#x5B50;&#xFF1A;
+// (new Date()).Format(&quot;yyyy-MM-dd hh:mm:ss.S&quot;) ==&gt; 2006-07-02 08:09:04.423
+// (new Date()).Format(&quot;yyyy-M-d h:m:s.S&quot;)      ==&gt; 2006-7-2 8:9:4.18
+
+Date.prototype.Format = function(fmt){ //author: meizz
+    var o = {
+        &quot;M+&quot; : this.getMonth()+1,                 //&#x6708;&#x4EFD;
+        &quot;d+&quot; : this.getDate(),                    //&#x65E5;
+        &quot;h+&quot; : this.getHours(),                   //&#x5C0F;&#x65F6;
+        &quot;m+&quot; : this.getMinutes(),                 //&#x5206;
+        &quot;s+&quot; : this.getSeconds(),                 //&#x79D2;
+        &quot;q+&quot; : Math.floor((this.getMonth()+3)/3), //&#x5B63;&#x5EA6;
+        &quot;S&quot;  : this.getMilliseconds()             //&#x6BEB;&#x79D2;
+    };
+    if(/(y+)/.test(fmt))
+        fmt=fmt.replace(RegExp.$1, (this.getFullYear()+&quot;&quot;).substr(4 - RegExp.$1.length));
+    for(var k in o)
+    if(new RegExp(&quot;(&quot;+ k +&quot;)&quot;).test(fmt))
+        fmt = fmt.replace(RegExp.$1, (RegExp.$1.length==1) ? (o[k]) : ((&quot;00&quot;+ o[k]).substr((&quot;&quot;+ o[k]).length)));
+    return fmt;
+}
+
+$(function(){
+    //&#x4E24;&#x4E2A;&#x65F6;&#x95F4;&#x4E4B;&#x95F4;&#x7684;&#x6BD4;&#x8F83;
+    function dateCompare(dateStart,dateEnd){
+        dateStart = dateStart.replace(/\-/gi,&quot;/&quot;);
+        dateEnd = dateEnd.replace(/\-/gi,&quot;/&quot;);
+        var time1 = new Date(dateStart).getTime();
+        var time2 = new Date(dateEnd).getTime();
+        if(time2 &gt; time1){
+            return true;
+        }
+        return false;
+    }//eg
+
+    &#x8FD0;&#x7528;&#x573A;&#x666F;&#x5982;&#xFF1A;
+    if(dateCompare(new Date($.cookie(&quot;dataTime&quot;)).Format(&quot;yyyy-MM-dd&quot;),new Date().Format(&quot;yyyy-MM-dd&quot;))){
+        //&#x8FD4;&#x56DE;true&#x6267;&#x884C;&#x8FD9;&#x91CC;&#x9762;&#x7684;&#x5185;&#x5BB9;
+    }
+})
+
+&#x8FD0;&#x7528;&#x5B9E;&#x4F8B;&#xFF1A;&#x79C1;&#x94F6;&#x5BB6;&#x9996;&#x9875;&#x534F;&#x8BAE;&#x5F39;&#x51FA;&#x5C42;&#x8BF4;&#x660E;</pre>
+
+
+<h3 id="&#x628A;&#x65F6;&#x95F4;&#x8F6C;&#x5316;&#x4E3A;&#x51C6;&#x5907;&#x65F6;&#x95F4;">&#x628A;&#x65F6;&#x95F4;&#x8F6C;&#x5316;&#x4E3A;&#x51C6;&#x5907;&#x65F6;&#x95F4;</h3>
+<pre>//&#x628A;&#x65F6;&#x95F4;&#x8F6C;&#x6362;&#x4E3A;&#x6807;&#x51C6;&#x65F6;&#x95F4;
+function get_unix_time(dateStr){
+    var newstr = dateStr.replace(/-/g,&apos;/&apos;);
+    var date =  new Date(newstr);
+    //var time_str = date.getTime().toString();
+    //return time_str.substr(0, 10);
+    return date;
+}</pre>
+
+<h3 id="&#x8BA1;&#x7B97;&#x5DF2;&#x7ECF;&#x5F00;&#x56E2;&#x65F6;&#x95F4;">&#x8BA1;&#x7B97;&#x5DF2;&#x7ECF;&#x5F00;&#x56E2;&#x65F6;&#x95F4;</h3>
+<pre>var indate = $(&quot;#start_date&quot;).val();
+var todate = get_server_time(); //&#x670D;&#x52A1;&#x5668;&#x65F6;&#x95F4;
+var olddate = get_unix_time(indate);  //&#x8C03;&#x7528;&#x4E0A;&#x9762;&#x7684;&#x51FD;&#x6570;&#x628A;&#x65F6;&#x95F4;&#x8F6C;&#x4E3A;&#x6807;&#x51C6;&#x65F6;&#x95F4;
+var timepass = 0;
+function showTime(){
+    var timelong = (todate - olddate) + timepass;
+    var h = parseInt(timelong/3600000,10);
+    var m = parseInt(timelong%3600000/60000,10);
+    var s = parseInt(timelong%60000/1000);
+    document.getElementById(&quot;datetime&quot;).innerHTML = (h &lt; 10 ? &quot;0&quot; + h : h) + &quot;:&quot; + (m &lt; 10 ? &quot;0&quot; + m : m) + &quot;:&quot; + (s &lt; 10 ? &quot;0&quot; + s : s);
+    setTimeout(function(){
+        timepass += 1000;
+        showTime();
+    },1000);
+}
+showTime();
+
+&#x8FD0;&#x7528;&#x5B9E;&#x4F8B;&#xFF1A;&#x79C1;&#x94F6;&#x5BB6;&#x624B;&#x673A;&#x62B1;&#x56E2;&#x6D3B;&#x52A8;
+</pre>
 
                                 
                                 </section>
@@ -483,8 +591,12 @@
 
             
                 
+                <a href="jsmo_kuai.html" class="navigation navigation-prev " aria-label="Previous page: js模块">
+                    <i class="fa fa-angle-left"></i>
+                </a>
                 
-                <a href="移动web开发技巧汇总.html" class="navigation navigation-next navigation-unique" aria-label="Next page: 移动Web开发技巧汇总">
+                
+                <a href="commonjs.html" class="navigation navigation-next " aria-label="Next page: common.js">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -495,7 +607,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"前端开发笔记","level":"1.1","depth":1,"next":{"title":"移动Web开发技巧汇总","level":"1.1.1","depth":2,"path":"移动web开发技巧汇总.md","ref":"移动web开发技巧汇总.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"README.md","mtime":"2016-07-05T06:48:35.468Z","type":"markdown"},"gitbook":{"version":"3.1.1","time":"2016-07-05T07:01:23.296Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"时间相关模块","level":"1.5.1","depth":2,"next":{"title":"common.js","level":"1.5.2","depth":2,"path":"commonjs.md","ref":"commonjs.md","articles":[]},"previous":{"title":"js模块","level":"1.5","depth":1,"path":"jsmo_kuai.md","ref":"jsmo_kuai.md","articles":[{"title":"时间相关模块","level":"1.5.1","depth":2,"path":"时间相关模块.md","ref":"时间相关模块.md","articles":[]},{"title":"common.js","level":"1.5.2","depth":2,"path":"commonjs.md","ref":"commonjs.md","articles":[]},{"title":"js及jquery获取页面和元素的宽高","level":"1.5.3","depth":2,"path":"js获取宽度.md","ref":"js获取宽度.md","articles":[]},{"title":"js常用函数","level":"1.5.4","depth":2,"path":"js常用函数.md","ref":"js常用函数.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"时间相关模块.md","mtime":"2016-07-05T06:48:35.473Z","type":"markdown"},"gitbook":{"version":"3.1.1","time":"2016-07-05T07:01:23.296Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
