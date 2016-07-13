@@ -76,3 +76,24 @@ console.log(arr.valueOf());  //["George","John","Thomas"]
 </pre>
 15、js数据类型
 <pre>字符串、数字、布尔、数组、对象、Null、Undefined</pre>
+
+
+### JS Math 对象
+具体的可查看：http://www.w3school.com.cn/jsref/jsref_obj_math.asp  ,下面列举几个主要的<br><br>
+1、Math.abs(x) 方法可返回数的绝对值。如：
+<pre>document.write(Math.abs(7.25))             //7.25
+document.write(Math.abs(-7.25))            //7.25
+document.write(Math.abs(7.25-10))          //2.75
+</pre>
+2、Math.ceil(x) 方法可对一个数进行上舍入。如：
+<pre>document.write(Math.ceil(0.60))         // 1
+document.write(Math.ceil(5.1))          // 6
+document.write(Math.ceil(-5.1))         // -5
+document.write(Math.ceil(-5.9))         //-5
+</pre>
+3、Math.floor(x) 方法可对一个数进行下舍入。如：
+<pre>document.write(Math.floor(0.60))         //0
+document.write(Math.floor(0.40))         //0
+document.write(Math.floor(5))            //5
+document.write(Math.floor(-5.9))         //-6
+</pre>
