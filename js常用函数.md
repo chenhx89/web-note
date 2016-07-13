@@ -97,3 +97,22 @@ document.write(Math.floor(0.40))         //0
 document.write(Math.floor(5))            //5
 document.write(Math.floor(-5.9))         //-6
 </pre>
+4、Math.max(x,y) 方法可返回两个指定的数中带有较大的值的那个数。如：
+<pre>document.write(Math.max(5,7))            //7
+document.write(Math.max(-3,5))           //5
+document.write(Math.max(-3,-5))          //-3
+</pre>
+5、Math.min(x,y) 方法可返回指定的数字中带有最低值的数字。如：
+<pre>document.write(Math.max(5,7))            //5
+document.write(Math.max(-3,5))           //-3
+document.write(Math.max(-3,-5))          //-5
+</pre>
+6、Math.random() 方法可返回介于 0 ~ 1 之间的一个随机数。如：
+<pre>document.write(Math.random())     //0.17967150011099875</pre>
+7、Math.round(x) 方法可把一个数字舍入为最接近的整数。如：
+<pre>document.write(Math.round(0.60))        //1
+document.write(Math.round(0.50))        //1
+document.write(Math.round(0.49))        //0
+document.write(Math.round(-4.40))       //-4
+document.write(Math.round(-4.60))       //-5
+</pre>
