@@ -55,6 +55,8 @@ git revert commit-id （比如：fa042ce57ebbe5bb9c8db709f719cec2c58ee7ff）撤�
 如果该分支没有合并到主分支会报错，可以用以下命令强制删除git branch -D <分支名></pre>
 
 **17、强制把远程代码拉到本地**
-<pre>git reset --hard origin/master</pre>
+<pre>git reset --hard origin/master
+注：这样不用解决冲突
+</pre>
 
 
