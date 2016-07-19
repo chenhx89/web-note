@@ -57,7 +57,7 @@
     <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="常用插件.html" />
+    <link rel="next" href="ajax写法.html" />
     
     
     <link rel="prev" href="js获取宽度.html" />
@@ -374,6 +374,19 @@
             
         </li>
     
+        <li class="chapter " data-level="1.5.5" data-path="ajax写法.html">
+            
+                <a href="ajax写法.html">
+            
+                    
+                    ajax写法
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
@@ -399,6 +412,19 @@
             
                     
                     常用弹层插件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="常用效果插件.html">
+            
+                <a href="常用效果插件.html">
+            
+                    
+                    常用效果插件
             
                 </a>
             
@@ -533,6 +559,106 @@ console.log(arr.valueOf());  //[&quot;George&quot;,&quot;John&quot;,&quot;Thomas
 </pre>
 15&#x3001;js&#x6570;&#x636E;&#x7C7B;&#x578B;
 <pre>&#x5B57;&#x7B26;&#x4E32;&#x3001;&#x6570;&#x5B57;&#x3001;&#x5E03;&#x5C14;&#x3001;&#x6570;&#x7EC4;&#x3001;&#x5BF9;&#x8C61;&#x3001;Null&#x3001;Undefined</pre>
+
+
+<h3 id="js-math-&#x5BF9;&#x8C61;">JS Math &#x5BF9;&#x8C61;</h3>
+<p>&#x5177;&#x4F53;&#x7684;&#x53EF;&#x67E5;&#x770B;&#xFF1A;<a href="http://www.w3school.com.cn/jsref/jsref_obj_math.asp" target="_blank">http://www.w3school.com.cn/jsref/jsref_obj_math.asp</a>  ,&#x4E0B;&#x9762;&#x5217;&#x4E3E;&#x51E0;&#x4E2A;&#x4E3B;&#x8981;&#x7684;<br><br>
+1&#x3001;Math.abs(x) &#x65B9;&#x6CD5;&#x53EF;&#x8FD4;&#x56DE;&#x6570;&#x7684;&#x7EDD;&#x5BF9;&#x503C;&#x3002;&#x5982;&#xFF1A;</p>
+<pre>document.write(Math.abs(7.25))             //7.25
+document.write(Math.abs(-7.25))            //7.25
+document.write(Math.abs(7.25-10))          //2.75
+</pre>
+2&#x3001;Math.ceil(x) &#x65B9;&#x6CD5;&#x53EF;&#x5BF9;&#x4E00;&#x4E2A;&#x6570;&#x8FDB;&#x884C;&#x4E0A;&#x820D;&#x5165;&#x3002;&#x5982;&#xFF1A;
+<pre>document.write(Math.ceil(0.60))         // 1
+document.write(Math.ceil(5.1))          // 6
+document.write(Math.ceil(-5.1))         // -5
+document.write(Math.ceil(-5.9))         //-5
+</pre>
+3&#x3001;Math.floor(x) &#x65B9;&#x6CD5;&#x53EF;&#x5BF9;&#x4E00;&#x4E2A;&#x6570;&#x8FDB;&#x884C;&#x4E0B;&#x820D;&#x5165;&#x3002;&#x5982;&#xFF1A;
+<pre>document.write(Math.floor(0.60))         //0
+document.write(Math.floor(0.40))         //0
+document.write(Math.floor(5))            //5
+document.write(Math.floor(-5.9))         //-6
+</pre>
+4&#x3001;Math.max(x,y) &#x65B9;&#x6CD5;&#x53EF;&#x8FD4;&#x56DE;&#x4E24;&#x4E2A;&#x6307;&#x5B9A;&#x7684;&#x6570;&#x4E2D;&#x5E26;&#x6709;&#x8F83;&#x5927;&#x7684;&#x503C;&#x7684;&#x90A3;&#x4E2A;&#x6570;&#x3002;&#x5982;&#xFF1A;
+<pre>document.write(Math.max(5,7))            //7
+document.write(Math.max(-3,5))           //5
+document.write(Math.max(-3,-5))          //-3
+</pre>
+5&#x3001;Math.min(x,y) &#x65B9;&#x6CD5;&#x53EF;&#x8FD4;&#x56DE;&#x6307;&#x5B9A;&#x7684;&#x6570;&#x5B57;&#x4E2D;&#x5E26;&#x6709;&#x6700;&#x4F4E;&#x503C;&#x7684;&#x6570;&#x5B57;&#x3002;&#x5982;&#xFF1A;
+<pre>document.write(Math.max(5,7))            //5
+document.write(Math.max(-3,5))           //-3
+document.write(Math.max(-3,-5))          //-5
+</pre>
+6&#x3001;Math.random() &#x65B9;&#x6CD5;&#x53EF;&#x8FD4;&#x56DE;&#x4ECB;&#x4E8E; 0 ~ 1 &#x4E4B;&#x95F4;&#x7684;&#x4E00;&#x4E2A;&#x968F;&#x673A;&#x6570;&#x3002;&#x5982;&#xFF1A;
+<pre>document.write(Math.random())     //0.17967150011099875</pre>
+7&#x3001;Math.round(x) &#x65B9;&#x6CD5;&#x53EF;&#x628A;&#x4E00;&#x4E2A;&#x6570;&#x5B57;&#x820D;&#x5165;&#x4E3A;&#x6700;&#x63A5;&#x8FD1;&#x7684;&#x6574;&#x6570;&#x3002;&#x5982;&#xFF1A;
+<pre>document.write(Math.round(0.60))        //1
+document.write(Math.round(0.50))        //1
+document.write(Math.round(0.49))        //0
+document.write(Math.round(-4.40))       //-4
+document.write(Math.round(-4.60))       //-5
+</pre>
+8&#x3001;object.toSource() &#x65B9;&#x6CD5;&#x8FD4;&#x56DE;&#x8868;&#x793A;&#x5BF9;&#x8C61;&#x6E90;&#x4EE3;&#x7801;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#x3002;&#x5982;&#xFF1A;
+<pre>function employee(name,job,born){
+  this.name=name;
+  this.job=job;
+  this.born=born;
+}
+var bill=new employee(&quot;Bill Gates&quot;,&quot;Engineer&quot;,1985);
+document.write(bill.toSource());      //({name:&quot;Bill Gates&quot;, job:&quot;Engineer&quot;, born:1985}) 
+</pre>
+9&#x3001;valueOf() &#x65B9;&#x6CD5;&#x53EF;&#x8FD4;&#x56DE; Boolean &#x5BF9;&#x8C61;&#x7684;&#x539F;&#x59CB;&#x503C;&#x3002;&#x5982;&#xFF1A;
+<pre>&#x5BF9;&#x8C61;         &#x8FD4;&#x56DE;&#x503C;
+Array        &#x6570;&#x7EC4;&#x5B9E;&#x4F8B;&#x5BF9;&#x8C61;&#x3002;
+Boolean      &#x5E03;&#x5C14;&#x503C;&#x3002;
+Date         &#x4EE5;&#x6BEB;&#x79D2;&#x6570;&#x5B58;&#x50A8;&#x7684;&#x65F6;&#x95F4;&#x503C;&#xFF0C;&#x4ECE; UTC 1970 &#x5E74; 1 &#x6708; 1 &#x65E5;&#x5348;&#x591C;&#x5F00;&#x59CB;&#x8BA1;&#x7B97;&#x3002;
+Function     &#x51FD;&#x6570;&#x672C;&#x8EAB;&#x3002;
+Number       &#x6570;&#x5B57;&#x503C;&#x3002;
+Object       &#x5BF9;&#x8C61;&#x672C;&#x8EAB;&#x3002;&#x8FD9;&#x662F;&#x9ED8;&#x8BA4;&#x8BBE;&#x7F6E;&#x3002;
+String       &#x5B57;&#x7B26;&#x4E32;&#x503C;&#x3002;
+
+// Array&#xFF1A;&#x8FD4;&#x56DE;&#x6570;&#x7EC4;&#x5BF9;&#x8C61;&#x672C;&#x8EAB;
+var array = [&quot;CodePlayer&quot;, true, 12, -5];
+document.writeln( array.valueOf() === array ); // true
+
+// Date&#xFF1A;&#x5F53;&#x524D;&#x65F6;&#x95F4;&#x8DDD;1970&#x5E74;1&#x6708;1&#x65E5;&#x5348;&#x591C;&#x7684;&#x6BEB;&#x79D2;&#x6570;
+var date = new Date(2013, 7, 18, 23, 11, 59, 230);
+document.writeln( date.valueOf() ); // 1376838719230
+
+// Number&#xFF1A;&#x8FD4;&#x56DE;&#x6570;&#x5B57;&#x503C;
+var num =  15.26540;
+document.writeln( num.valueOf() ); // 15.2654
+
+// &#x5E03;&#x5C14;&#xFF1A;&#x8FD4;&#x56DE;&#x5E03;&#x5C14;&#x503C;true&#x6216;false
+var bool = true;
+document.writeln( bool.valueOf() === bool ); // true
+// new&#x4E00;&#x4E2A;Boolean&#x5BF9;&#x8C61;
+var newBool = new Boolean(true);
+// valueOf()&#x8FD4;&#x56DE;&#x7684;&#x662F;true&#xFF0C;&#x4E24;&#x8005;&#x7684;&#x503C;&#x76F8;&#x7B49;
+document.writeln( newBool.valueOf() == newBool ); // true
+// &#x4F46;&#x662F;&#x4E0D;&#x5168;&#x7B49;&#xFF0C;&#x4E24;&#x8005;&#x7C7B;&#x578B;&#x4E0D;&#x76F8;&#x7B49;&#xFF0C;&#x524D;&#x8005;&#x662F;boolean&#x7C7B;&#x578B;&#xFF0C;&#x540E;&#x8005;&#x662F;object&#x7C7B;&#x578B;
+document.writeln( newBool.valueOf() === newBool ); // false
+
+// Function&#xFF1A;&#x8FD4;&#x56DE;&#x51FD;&#x6570;&#x672C;&#x8EAB;
+function foo(){ 
+}
+document.writeln( foo.valueOf() === foo ); // true
+var foo2 =  new Function(&quot;x&quot;, &quot;y&quot;, &quot;return x + y;&quot;);
+document.writeln( foo2.valueOf() === foo2 ); // true
+
+// Object&#xFF1A;&#x8FD4;&#x56DE;&#x5BF9;&#x8C61;&#x672C;&#x8EAB;
+var obj = {name: &quot;&#x5F20;&#x4E09;&quot;, age: 18};
+document.writeln( obj.valueOf() === obj ); // true
+
+// String&#xFF1A;&#x8FD4;&#x56DE;&#x5B57;&#x7B26;&#x4E32;&#x503C;
+var str = &quot;http://www.365mini.com&quot;;
+document.writeln( str.valueOf() === str ); // true
+// new&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;&#x5BF9;&#x8C61;
+var str2 = new String(&quot;http://www.365mini.com&quot;);
+// &#x4E24;&#x8005;&#x7684;&#x503C;&#x76F8;&#x7B49;&#xFF0C;&#x4F46;&#x4E0D;&#x5168;&#x7B49;&#xFF0C;&#x56E0;&#x4E3A;&#x7C7B;&#x578B;&#x4E0D;&#x540C;&#xFF0C;&#x524D;&#x8005;&#x4E3A;string&#x7C7B;&#x578B;&#xFF0C;&#x540E;&#x8005;&#x4E3A;object&#x7C7B;&#x578B;
+document.writeln( str2.valueOf() === str2 ); // false
+</pre>
                                 
                                 </section>
                             
@@ -564,7 +690,7 @@ console.log(arr.valueOf());  //[&quot;George&quot;,&quot;John&quot;,&quot;Thomas
                 </a>
                 
                 
-                <a href="常用插件.html" class="navigation navigation-next " aria-label="Next page: 常用插件">
+                <a href="ajax写法.html" class="navigation navigation-next " aria-label="Next page: ajax写法">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -575,7 +701,7 @@ console.log(arr.valueOf());  //[&quot;George&quot;,&quot;John&quot;,&quot;Thomas
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"js常用函数","level":"1.5.4","depth":2,"next":{"title":"常用插件","level":"1.6","depth":1,"path":"常用插件.md","ref":"常用插件.md","articles":[{"title":"常用弹层插件","level":"1.6.1","depth":2,"path":"常用弹层插件.md","ref":"常用弹层插件.md","articles":[]}]},"previous":{"title":"js及jquery获取页面和元素的宽高","level":"1.5.3","depth":2,"path":"js获取宽度.md","ref":"js获取宽度.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"js常用函数.md","mtime":"2016-07-12T09:30:24.686Z","type":"markdown"},"gitbook":{"version":"3.1.1","time":"2016-07-12T09:37:10.910Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"js常用函数","level":"1.5.4","depth":2,"next":{"title":"ajax写法","level":"1.5.5","depth":2,"path":"ajax写法.md","ref":"ajax写法.md","articles":[]},"previous":{"title":"js及jquery获取页面和元素的宽高","level":"1.5.3","depth":2,"path":"js获取宽度.md","ref":"js获取宽度.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"js常用函数.md","mtime":"2016-07-13T07:22:55.038Z","type":"markdown"},"gitbook":{"version":"3.1.1","time":"2016-07-19T07:04:08.328Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
