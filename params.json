@@ -1,6 +1,0 @@
-{
-  "name": "Web-note",
-  "tagline": "web前端开发笔记",
-  "body": "\r\n# 前端开发相关笔记\r\n\r\n<a href=\"./_book/index.html\">点击</a>\r\n\r\n记录前端开发过程中容易出错的地方，及浏览器的一些兼容解决方法\r\n",
-  "note": "Don't delete this file! It's used internally to help with page regeneration."
-}
